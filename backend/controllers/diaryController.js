@@ -35,7 +35,7 @@ const getDiaryById = async (req, res) => {
             return res.status(404).json({ message: 'Diary not found' });
         }
 
-        if (diary.user.toString() !== req.user._id.toString()) {
+        if (!diary.user.equals(req.user._id)) {
             return res.status(401).json({ message: 'Not authorized' });
         }
 
@@ -53,7 +53,7 @@ const updateDiary = async (req, res) => {
             return res.status(404).json({ message: 'Diary not found' });
         }
 
-        if (diary.user.toString() !== req.user._id.toString()) {
+        if (!diary.user.equals(req.user._id)) {
             return res.status(401).json({ message: 'Not authorized' });
         }
 
@@ -77,7 +77,7 @@ const deleteDiary = async (req, res) => {
             return res.status(404).json({ message: 'Diary not found' });
         }
 
-        if (diary.user.toString() !== req.user._id.toString()) {
+        if (!diary.user.equals(req.user._id)) {
             return res.status(401).json({ message: 'Not authorized' });
         }
 
