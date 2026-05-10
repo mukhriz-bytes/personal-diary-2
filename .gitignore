@@ -1,0 +1,8 @@
+# Ignore dependencies
+**/node_modules/
+
+# Ignore environment variables
+**/.env
+
+# Ignore OS files
+.DS_Store
